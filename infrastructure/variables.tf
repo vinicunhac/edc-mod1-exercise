@@ -3,3 +3,7 @@ variable "aws-region" {
 }
 
 
+variable "lambda_function_name" {
+  default     = "ExecuteEMR"
+}
+

@@ -1,12 +1,13 @@
-provider "aws"{
-    region = var.aws_region
+provider "aws" {
+  region = var.aws_region
 }
 
-# Centralizar o arquivo de controle de estado do TF
+
+# Centralizar o arquivo de controle de estado do terraform
 terraform {
-  backend "s3"{
-    bucket = "terraform-state-vin-xp"
-    key    = "state/xp/edc/mod1/terraform.trfstate"
+  backend "s3" {
+    bucket = "terraform-state-xp-vini"
+    key    = "state/xp/edc/mod1/terraform.tfstate"
     region = "us-east-2"
   }
 }
