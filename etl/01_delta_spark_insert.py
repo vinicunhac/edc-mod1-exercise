@@ -18,7 +18,7 @@ enem = (
     .option("inferSchema", True)
     .option("header", True)
     .option("delimiter", ";")
-    .load("s3://datalake-vini-xp/raw/enem") 
+    .load("s3://datalake-vini-xp/raw/enem/year-2019") 
 )
 
 # Escreve a tabela em staging em formato delta
@@ -28,6 +28,6 @@ print("Writing delta table...")
     .write
     .mode("overwrite")
     .format("delta")
-    .partitionBy("year")
+    .partitionBy("NU_ANO")
     .save("s3://datalake-vini-xp/staging/enem")
 )
