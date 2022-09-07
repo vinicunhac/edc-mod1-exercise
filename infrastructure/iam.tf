@@ -1,5 +1,5 @@
 resource "aws_iam_role" "lambda" {
-  name = "IGTILambdaRole"
+  name = "XPLambdaRole"
 
   assume_role_policy = <<EOF
 {
@@ -133,7 +133,7 @@ resource "aws_iam_role_policy_attachment" "lambda_attach" {
 ###############
 
 resource "aws_iam_role" "glue_role" {
-  name = "IGTIGlueCrawlerRole"
+  name = "XPGlueCrawlerRole"
 
   assume_role_policy = <<EOF
 {
@@ -152,7 +152,7 @@ resource "aws_iam_role" "glue_role" {
 EOF
 
   tags = {
-    IES = "IGTI"
+    IES = "XP"
     CURSO = "EDC"
   }
 
@@ -160,7 +160,7 @@ EOF
 
 
 resource "aws_iam_policy" "glue_policy" {
-  name        = "IGTIAWSGlueServiceRole"
+  name        = "XPAWSGlueServiceRole"
   path        = "/"
   description = "Policy for AWS Glue service role which allows access to related services including EC2, S3, and Cloudwatch Logs"
 
