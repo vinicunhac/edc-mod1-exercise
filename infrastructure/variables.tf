@@ -14,3 +14,9 @@ variable "airflow_subnet_id" {
 variable "vpc_id" {
   default = "vpc-004b8a904b3f7c30f"
 }
+
+variable "key_pair_name" {
+  default = "key-pair-vini"
+}
+
+
